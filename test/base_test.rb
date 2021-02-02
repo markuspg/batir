@@ -6,18 +6,18 @@
 $LOAD_PATH.unshift File.join(File.dirname(__FILE__), '..', 'lib')
 
 require 'minitest/autorun'
-require 'patir/base'
+require 'batir/base'
 
-module Patir::Test
+module Batir::Test
   ##
-  # Check the functionality of the Patir module
+  # Check the functionality of the Batir module
   class Module < Minitest::Test
     ##
     # A temporary log file for testing
     TEMP_LOG = 'temp.log'
 
     ##
-    # Clean-up steps after each of the test cases for the Patir module
+    # Clean-up steps after each of the test cases for the Batir module
     def teardown
       File.delete(TEMP_LOG) if File.exist?(TEMP_LOG)
     end
@@ -25,9 +25,9 @@ module Patir::Test
     ##
     # Verify that the default logger setup works correctly
     def test_setup_logger_default
-      logger = Patir.setup_logger
+      logger = Batir.setup_logger
       assert_equal(Logger::INFO, logger.level)
-      assert_instance_of(Patir::PatirLoggerFormatter, logger.formatter)
+      assert_instance_of(Batir::BatirLoggerFormatter, logger.formatter)
       out, = capture_subprocess_io do
         logger.debug('Test')
         logger.warn('Oh oh')
@@ -36,20 +36,20 @@ module Patir::Test
     end
 
     ##
-    # Verify that Patir.setup_logger logs to the correct file
+    # Verify that Batir.setup_logger logs to the correct file
     def test_setup_logger_file
-      logger = Patir.setup_logger(TEMP_LOG, nil)
+      logger = Batir.setup_logger(TEMP_LOG, nil)
       logger.close
       assert(File.exist?(TEMP_LOG))
     end
 
     ##
-    # Verify that Patir.setup_logger correctly handles mode parameters
+    # Verify that Batir.setup_logger correctly handles mode parameters
     def test_setup_logger_mode
       [[:debug, [Logger::DEBUG], 'DEBUG'],
        [:mute, [Logger::DEBUG, Logger::WARN, Logger::FATAL], 'FATAL'],
        [:silent, [Logger::INFO, Logger::WARN], ' WARN']].each do |data|
-         logger = Patir.setup_logger(nil, data[0])
+         logger = Batir.setup_logger(nil, data[0])
          out, = capture_subprocess_io do
            data[1].each do |severity|
              logger.log(severity, 'Test Message')

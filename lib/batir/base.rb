@@ -5,7 +5,7 @@
 
 require 'logger'
 
-module Patir
+module Batir
   ##
   # Exception which is thrown by ShellCommand if the Hash used for
   # initialization misses the required +cmd+ key
@@ -14,7 +14,7 @@ module Patir
 
   ##
   # Extend the default log message formatter to define an own format
-  class PatirLoggerFormatter < Logger::Formatter
+  class BatirLoggerFormatter < Logger::Formatter
     ##
     # The format of the created log messages
     FORMAT = "[%s] %5s: %s\n"
@@ -36,7 +36,7 @@ module Patir
   ##
   # Set up a default logger for usage by top-level scripts and library users
   #
-  # This creates a default logger fit for the usage with and around Patir.
+  # This creates a default logger fit for the usage with and around Batir.
   #
   # If no +filename+ is given output will be written to $stdout.
   #
@@ -61,7 +61,7 @@ module Patir
     logger.level = Logger::FATAL if mode == :mute
     logger.level = Logger::WARN if mode == :silent
     logger.level = Logger::DEBUG if mode == :debug || $DEBUG
-    logger.formatter = PatirLoggerFormatter.new
+    logger.formatter = BatirLoggerFormatter.new
     logger
   end
 end

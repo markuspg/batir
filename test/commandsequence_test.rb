@@ -3,21 +3,21 @@
 
 # frozen_string_literal: true
 
-require_relative '../lib/patir/commandsequence'
+require_relative '../lib/batir/commandsequence'
 
-module Patir::Test
+module Batir::Test
   class CommandSequence < Minitest::Test
-    include Patir
+    include Batir
 
     def setup
-      @echo = Patir::ShellCommand.new(cmd: 'echo hello')
+      @echo = Batir::ShellCommand.new(cmd: 'echo hello')
       @error = MockCommandError.new
       @void = MockCommandObject.new
       @warning = MockCommandWarning.new
     end
 
     def test_normal
-      seq = Patir::CommandSequence.new('test')
+      seq = Batir::CommandSequence.new('test')
       assert(seq.steps.empty?)
       refute_nil(seq.run)
       refute(seq.state.success?)
@@ -29,7 +29,7 @@ module Patir::Test
     end
 
     def test_flunk_on_error
-      seq = Patir::CommandSequence.new('test')
+      seq = Batir::CommandSequence.new('test')
       assert(seq.steps.empty?)
       assert(check_step = seq.add_step(@echo, :flunk_on_error))
       assert_equal(:flunk_on_error, check_step.strategy)
@@ -47,7 +47,7 @@ module Patir::Test
     end
 
     def test_fail_on_error
-      seq = Patir::CommandSequence.new('test')
+      seq = Batir::CommandSequence.new('test')
       assert(seq.steps.empty?)
       assert(seq.add_step(@echo))
       assert(check_step = seq.add_step(@error, :fail_on_error))
@@ -65,7 +65,7 @@ module Patir::Test
     end
 
     def test_flunk_on_warning
-      seq = Patir::CommandSequence.new('test')
+      seq = Batir::CommandSequence.new('test')
       assert(seq.steps.empty?)
       assert(seq.add_step(@echo))
       assert(check_step = seq.add_step(@error, :flunk_on_warning))
@@ -83,7 +83,7 @@ module Patir::Test
     end
 
     def test_fail_on_warning
-      seq = Patir::CommandSequence.new('test')
+      seq = Batir::CommandSequence.new('test')
       assert(seq.steps.empty?)
       assert(seq.add_step(@echo))
       assert(check_step = seq.add_step(@warning, :fail_on_warning))
@@ -103,7 +103,7 @@ module Patir::Test
 
   class CommandSequenceStatus < Minitest::Test
     def test_new
-      st = Patir::CommandSequenceStatus.new('sequence')
+      st = Batir::CommandSequenceStatus.new('sequence')
       refute(st.running?)
       refute(st.success?)
       assert_equal(:not_executed, st.status)
@@ -111,7 +111,7 @@ module Patir::Test
     end
 
     def test_step_equal
-      st = Patir::CommandSequenceStatus.new('sequence')
+      st = Batir::CommandSequenceStatus.new('sequence')
       step1 = MockCommandObject.new
       step2 = MockCommandWarning.new
       step3 = MockCommandError.new
@@ -138,7 +138,7 @@ module Patir::Test
     end
 
     def test_completed?
-      st = Patir::CommandSequenceStatus.new('sequence')
+      st = Batir::CommandSequenceStatus.new('sequence')
       step1 = MockCommandObject.new
       step1.number = 1
       step2 = MockCommandWarning.new

@@ -6,16 +6,16 @@
 $LOAD_PATH.unshift File.join(File.dirname(__FILE__), '..', 'lib')
 
 require 'minitest/autorun'
-require 'patir/base'
+require 'batir/base'
 
-module Patir::Test
+module Batir::Test
   ##
-  # Check Patir::PatirLoggerFormatter
-  class PatirLoggerFormatter < Minitest::Test
+  # Check Batir::BatirLoggerFormatter
+  class BatirLoggerFormatter < Minitest::Test
     ##
-    # Verify that Patir::PatirLoggerFormatter#call correctly formats messages
+    # Verify that Batir::BatirLoggerFormatter#call correctly formats messages
     def test_call
-      formatter = Patir::PatirLoggerFormatter.new
+      formatter = Batir::BatirLoggerFormatter.new
       time = Time.new(2021, 1, 19, 21, 59, 14)
       assert_equal("[20210119 21:59:14]     1: Ouch\n",
                    formatter.call(Logger::INFO, time, 'test_prog', 'Ouch'))
@@ -25,9 +25,9 @@ module Patir::Test
     end
 
     ##
-    # Verify that Patir::PatirLoggerFormatter is being initialized correctly
+    # Verify that Batir::BatirLoggerFormatter is being initialized correctly
     def test_initialization
-      formatter = Patir::PatirLoggerFormatter.new
+      formatter = Batir::BatirLoggerFormatter.new
       assert_equal('%Y%m%d %H:%M:%S', formatter.datetime_format)
     end
   end

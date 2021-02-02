@@ -5,9 +5,9 @@ require 'English'
 require 'observer'
 require 'fileutils'
 require 'systemu'
-require 'patir/base'
+require 'batir/base'
 
-module Patir
+module Batir
   ##
   # A module defining the interface for a Command object
   #
@@ -277,7 +277,7 @@ module Patir
   #       end
   #     end
   class RubyCommand
-    include Patir::Command
+    include Batir::Command
 
     ##
     # This holds the block being passed to the initialization method

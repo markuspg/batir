@@ -2,11 +2,11 @@
 
 # frozen_string_literal: true
 
-require_relative 'patir/version'
+require_relative 'batir/version'
 
 ##
-# This module contains the entire functionality of Patir.
+# This module contains the entire functionality of Batir.
 #
 # Some useful helpers are included as methods too.
-module Patir
+module Batir
 end

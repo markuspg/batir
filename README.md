@@ -1,6 +1,7 @@
-# Patir
+# Batir
 
-[patir](http://patir.rubyforge.org) provides code to enable project automation tasks:
+[Batir](https://github.com/markuspg/batir.git) provides code to enable project
+automation tasks:
 
  * a logging format for the build-in logger of Ruby
  * a command abstraction with a platform independent implementation for running
@@ -10,13 +11,14 @@
 
 ## Dependencies
 
-The platform independence for shell commands is achieved with the help of the [systemu](https://github.com/ahoward/systemu) gem.
+The platform independence for shell commands is achieved with the help of the
+[systemu](https://github.com/ahoward/systemu) gem.
 
 Everything else is pure Ruby.
 
 ## Install
 
-    sudo gem install patir
+    sudo gem install batir
 
 ## License
 

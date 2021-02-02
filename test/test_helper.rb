@@ -2,6 +2,6 @@
 
 $LOAD_PATH.unshift File.expand_path('../lib', __dir__)
 
-require 'patir'
+require 'batir'
 
 require 'minitest/autorun'

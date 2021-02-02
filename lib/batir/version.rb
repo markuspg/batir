@@ -2,21 +2,21 @@
 
 # frozen_string_literal: true
 
-module Patir
+module Batir
   ##
-  # Version information of Patir
+  # Version information of Batir
   module Version
     ##
-    # The major version of Patir
+    # The major version of Batir
     MAJOR = 0
     ##
-    # The minor version of Patir
+    # The minor version of Batir
     MINOR = 9
     ##
-    # The tiny version of Patir
+    # The tiny version of Batir
     TINY = 0
     ##
-    # The full version of Patir as a String
+    # The full version of Batir as a String
     STRING = [MAJOR, MINOR, TINY].join('.')
   end
 end

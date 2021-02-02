@@ -3,10 +3,10 @@
 
 require 'observer'
 
-module Patir
+module Batir
   #CommandSequence describes a set of commands to be executed in sequence.
   #
-  #Each instance of CommandSequence contains a set of Patir::Command instances, which are the steps to perform.
+  #Each instance of CommandSequence contains a set of Batir::Command instances, which are the steps to perform.
   #
   #The steps are executed in the sequence they are added. A CommandSequence can terminate immediately on step failure or it can continue. It will still be marked as failed as long as a single step fails.
   #
@@ -100,7 +100,7 @@ module Patir
     end
     #Adds a step to the CommandSequence using the given exit strategy.
     #
-    #Steps are always added at the end of the build sequence. A step should quack like a Patir::Command.
+    #Steps are always added at the end of the build sequence. A step should quack like a Batir::Command.
     #
     #Valid exit strategies are 
     # :fail_on_error - CommandSequence terminates on failure of this step

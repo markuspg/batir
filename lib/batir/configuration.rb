@@ -7,7 +7,7 @@ require 'English'
 
 require_relative 'base'
 
-module Patir
+module Batir
   ##
   # Exception which is being thrown if an error occurs while loading a
   # configuration from a file with Configurator
@@ -15,7 +15,7 @@ module Patir
   end
 
   ##
-  # Configurator is the base class for all the Patir configuration classes.
+  # Configurator is the base class for all the Batir configuration classes.
   #
   # The idea behind the Configurator is that a developer creates a module that
   # contains all the configuration directives as methods.
@@ -41,7 +41,7 @@ module Patir
   #
   #     module SimpleConfiguration
   #       def name=(tool_name)
-  #         raise Patir::ConfigurationException, \
+  #         raise Batir::ConfigurationException, \
   #               'Inappropriate language not allowed' if tool_name == '@#!&@&$}'
   #         @name = tool_name
   #       end
@@ -81,10 +81,10 @@ module Patir
     # Initialize a new Configurator instance by parsing the given file and
     # eventually logging with the specified logger
     #
-    # If no logger is given then PatirLoggerFormatter is utilized for logging.
+    # If no logger is given then BatirLoggerFormatter is utilized for logging.
     def initialize(config_file, logger = nil)
       @logger = logger
-      @logger ||= Patir.setup_logger
+      @logger ||= Batir.setup_logger
       @config_file = config_file
       load_configuration(@config_file)
     end

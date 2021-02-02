@@ -5,20 +5,20 @@
 
 require 'test_helper'
 
-module Patir
+module Batir
   ##
-  # Module for the verification of the functionality of Patir
+  # Module for the verification of the functionality of Batir
   module Test
     ##
-    # Check Patir::Version
+    # Check Batir::Version
     class Version < Minitest::Test
       ##
       # Verify that the version data is correctly set
       def test_version_data
-        assert_equal(0, ::Patir::Version::MAJOR)
-        assert_equal(9, ::Patir::Version::MINOR)
-        assert_equal(0, ::Patir::Version::TINY)
-        assert_equal('0.9.0', ::Patir::Version::STRING)
+        assert_equal(0, ::Batir::Version::MAJOR)
+        assert_equal(9, ::Batir::Version::MINOR)
+        assert_equal(0, ::Batir::Version::TINY)
+        assert_equal('0.9.0', ::Batir::Version::STRING)
       end
     end
   end
