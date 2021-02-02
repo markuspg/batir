@@ -43,10 +43,12 @@ module Batir
   # +mode+ can be any value from Logger::Severity or
   # * +:mute+ to set the level to +FATAL+
   # * +:silent+ to set the level to +WARN+
-  # * +:debug+ to set the level to +DEBUG+. +DEBUG+ is set as level also if
-  #   $DEBUG is +true+
+  # * +:debug+ to set the level to +DEBUG+.
   #
-  # The default log level is +INFO+.
+  # +DEBUG+ is set as level also if $DEBUG is +true+ and overrides the +mode+
+  # parameter in this case.
+  #
+  # The default log level is +INFO+ if no +mode+ is given.
   def self.setup_logger(filename = nil, mode = nil)
     logger = if filename
                Logger.new(filename)
