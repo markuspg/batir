@@ -3,10 +3,7 @@
 
 # frozen_string_literal: true
 
-$LOAD_PATH.unshift File.join(File.dirname(__FILE__), '..', 'lib')
-
-require 'minitest/autorun'
-require 'batir/base'
+require 'test_helper'
 
 module Batir::Test
   ##

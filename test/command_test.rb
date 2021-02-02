@@ -1,9 +1,8 @@
 # Copyright (c) 2007-2012 Vassilis Rizopoulos. All rights reserved.
 # Copyright (c) 2021 Markus Prasser. All rights reserved.
 
-$:.unshift File.join(File.dirname(__FILE__),"..","lib")
-require "minitest/autorun"
-require 'batir/command.rb'
+require 'test_helper'
+require 'batir/command'
 
 class MockCommandObject
   include Batir::Command

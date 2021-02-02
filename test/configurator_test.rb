@@ -3,9 +3,8 @@
 
 # frozen_string_literal: true
 
-require 'minitest/autorun'
-
-require_relative '../lib/batir/configuration'
+require 'test_helper'
+require 'batir/configurator'
 
 ##
 # A wrapper for Logger just intended for the testing of Configurator
@@ -111,7 +110,7 @@ module Batir::Test
       end
       assert_equal("Syntax error in the configuration file \"samples/syntax.cfg\"" \
                    ":\n#{File.expand_path('../../lib/batir', __FILE__)}" \
-                   "/configuration.rb:138: syntax error," \
+                   "/configurator.rb:138: syntax error," \
                    " unexpected end-of-input, expecting '}'",
                    exc.message)
     end

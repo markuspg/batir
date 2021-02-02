@@ -3,7 +3,8 @@
 
 # frozen_string_literal: true
 
-require_relative '../lib/batir/commandsequence'
+require 'test_helper'
+require 'batir/commandsequence'
 
 module Batir::Test
   class CommandSequence < Minitest::Test
