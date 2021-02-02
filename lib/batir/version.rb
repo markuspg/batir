@@ -13,10 +13,10 @@ module Batir
     # The minor version of Batir
     MINOR = 9
     ##
-    # The tiny version of Batir
-    TINY = 0
+    # The patch version of Batir
+    PATCH = 0
     ##
     # The full version of Batir as a String
-    STRING = [MAJOR, MINOR, TINY].join('.')
+    STRING = [MAJOR, MINOR, PATCH].join('.')
   end
 end

@@ -17,7 +17,7 @@ module Batir
       def test_version_data
         assert_equal(0, ::Batir::Version::MAJOR)
         assert_equal(9, ::Batir::Version::MINOR)
-        assert_equal(0, ::Batir::Version::TINY)
+        assert_equal(0, ::Batir::Version::PATCH)
         assert_equal('0.9.0', ::Batir::Version::STRING)
       end
     end
