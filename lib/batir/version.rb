@@ -8,10 +8,10 @@ module Batir
   module Version
     ##
     # The major version of Batir
-    MAJOR = 0
+    MAJOR = 1
     ##
     # The minor version of Batir
-    MINOR = 9
+    MINOR = 0
     ##
     # The patch version of Batir
     PATCH = 0

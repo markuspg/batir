@@ -15,10 +15,10 @@ module Batir
       ##
       # Verify that the version data is correctly set
       def test_version_data
-        assert_equal(0, ::Batir::Version::MAJOR)
-        assert_equal(9, ::Batir::Version::MINOR)
+        assert_equal(1, ::Batir::Version::MAJOR)
+        assert_equal(0, ::Batir::Version::MINOR)
         assert_equal(0, ::Batir::Version::PATCH)
-        assert_equal('0.9.0', ::Batir::Version::STRING)
+        assert_equal('1.0.0', ::Batir::Version::STRING)
       end
     end
   end
